@@ -241,7 +241,7 @@ class Intro extends InheritedWidget {
                 ),
               ),
             ),
-            width: position.width,
+            width: introStepBuilder.overlayWidth ?? position.width,
             left: position.left,
             top: position.top,
             bottom: position.bottom,

@@ -247,6 +247,36 @@ class Intro extends InheritedWidget {
             bottom: position.bottom,
             right: position.right,
           ),
+          if (introStepBuilder.text != null) ...[
+            Positioned(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Center(
+                    child: Text(
+                      introStepBuilder.text!,
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                      style: introStepBuilder.textStyle ??
+                          TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2,
+                            color: Colors.white,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              width: MediaQuery.sizeOf(_context!).width,
+              // left: position.left,
+              // top: position.top,
+              bottom: 15,
+              // right: position.right,
+            ),
+          ],
         ],
       );
     } else if (introStepBuilder.text != null) {

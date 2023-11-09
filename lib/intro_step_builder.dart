@@ -24,6 +24,7 @@ class IntroStepBuilder extends StatefulWidget {
   final EdgeInsets? padding;
 
   final String? text;
+  final TextStyle? textStyle;
 
   /// When widget loaded (means the key is add to context)
   final VoidCallback? onWidgetLoad;
@@ -36,6 +37,7 @@ class IntroStepBuilder extends StatefulWidget {
     required this.order,
     required this.builder,
     this.text,
+    this.textStyle,
     this.overlayBuilder,
     this.borderRadius,
     this.onHighlightWidgetTap,

@@ -221,7 +221,7 @@ class Intro extends InheritedWidget {
     }
 
     if (introStepBuilder.overlayBuilder != null) {
-      _overlayWidget = Column(
+      _overlayWidget = Stack(
         children: [
           Positioned(
             child: SizedBox(

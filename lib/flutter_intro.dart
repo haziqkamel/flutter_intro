@@ -248,19 +248,23 @@ class Intro extends InheritedWidget {
             right: position.right,
           ),
           if (introStepBuilder.text != null) ...[
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
+            Positioned(
               child: Text(
                 introStepBuilder.text!,
                 softWrap: true,
-                style: introStepBuilder.textStyle ?? TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  height: 1.2,
-                  color: Colors.black,
-                ),
+                style: introStepBuilder.textStyle ??
+                    TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      height: 1.2,
+                      color: Colors.white,
+                    ),
               ),
+              width: introStepBuilder.overlayWidth ?? position.width,
+              // left: position.left,
+              // top: position.top,
+              bottom: position.bottom,
+              // right: position.right,
             ),
           ],
         ],

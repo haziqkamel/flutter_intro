@@ -221,7 +221,7 @@ class Intro extends InheritedWidget {
     }
 
     if (introStepBuilder.overlayBuilder != null) {
-      _overlayWidget = Stack(
+      _overlayWidget = Column(
         children: [
           Positioned(
             child: SizedBox(
@@ -247,6 +247,22 @@ class Intro extends InheritedWidget {
             bottom: position.bottom,
             right: position.right,
           ),
+          if (introStepBuilder.text != null) ...[
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16.0),
+              child: Text(
+                introStepBuilder.text!,
+                softWrap: true,
+                style: introStepBuilder.textStyle ?? TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  height: 1.2,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
         ],
       );
     } else if (introStepBuilder.text != null) {

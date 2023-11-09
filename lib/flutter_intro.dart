@@ -249,23 +249,29 @@ class Intro extends InheritedWidget {
           ),
           if (introStepBuilder.text != null) ...[
             Positioned(
-              child: Center(
-                child: Text(
-                  introStepBuilder.text!,
-                  softWrap: true,
-                  style: introStepBuilder.textStyle ??
-                      TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        height: 1.2,
-                        color: Colors.white,
-                      ),
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    introStepBuilder.text!,
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                    style: introStepBuilder.textStyle ??
+                        TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          height: 1.2,
+                          color: Colors.white,
+                        ),
+                  ),
+                ],
               ),
               width: introStepBuilder.overlayWidth ?? position.width,
               // left: position.left,
               // top: position.top,
-              bottom: 0,
+              bottom: 15,
               // right: position.right,
             ),
           ],
